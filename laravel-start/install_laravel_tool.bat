@@ -44,8 +44,19 @@ if /I "%errorlevel%" EQU "1" (
   echo|set /p=".          [90;1m╚══>[0m"
   choice /c 123 >nul
   if /I "%errorlevel%" EQU "1" (
-    echo Installing NPM...
-    REM Add your NPM installation command here
+    echo Checking if npm is installed...
+    npm -v >nul 2>&1
+    if %errorlevel% neq 0 (
+      echo           [90;1m╚══»[0m[31m[NPM Not Installed][0m
+      echo Installing prerequisites for NPM...
+      REM Add your prerequisite installation commands here
+      echo Installing NPM...
+      REM Add your npm installation command here
+    ) else (
+      echo NPM is already installed.
+      echo Running npm install...
+      npm install
+    )
   ) else if /I "%errorlevel%" EQU "2" (
     echo Updating NPM...
     REM Add your NPM update command here
