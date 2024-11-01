@@ -48,12 +48,12 @@ if /I "%errorlevel%" EQU "1" (
     npm -v >nul 2>&1
     if %errorlevel% neq 0 (
       echo           [90;1m╚══»[0m[31m[NPM Not Installed][0m
-      echo Installing prerequisites for NPM...
+      echo           [90;1m╚══»[0m[31m[Installing pre-requisites][0m
       REM Add your prerequisite installation commands here
-      echo Installing NPM...
+      echo           [90;1m╚══»[0m[31m[Installing NPM][0m
       REM Add your npm installation command here
     ) else (
-      echo NPM is already installed.
+      echo           [90;1m╚══»[0m[92m[NPM Not Installed][0m
       echo Running npm install...
       npm install
     )
