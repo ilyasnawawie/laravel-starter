@@ -26,22 +26,25 @@ echo.
 echo.
 :input
 ping localhost -n 1 >nul
-echo     [90;1m#═╦═══════»[0m  [92m[Option1][0m [95m[1][0m
+echo     [90;1m#═╦═══════»[0m  [92m[Manage NPM][0m       [95m[1][0m
 ping localhost -n 1 >nul
-echo       [90;1m╚═╦══════»[0m  [92m[Option2][0m  [95m[2][0m
+echo       [90;1m╚═╦══════»[0m  [92m[Manage Artisan][0m  [95m[2][0m
 ping localhost -n 1 >nul
-echo         [90;1m╚═╦═════»[0m  [92m[Option3][0m   [95m[3][0m
+echo         [90;1m╚═╦═════»[0m  [92m[Manage XAMPP][0m   [95m[3][0m
 echo|set /p=".          [90;1m╚══>[0m"
 choice /c 123 >nul
 if /I "%errorlevel%" EQU "1" (
-  start option1.bat
+  echo Installing npm...
+  REM Add your npm installation command here
   goto :start
 )
 if /I "%errorlevel%" EQU "2" (
-  start option2.vbs
+  echo Installing Artisan...
+  REM Add your artisan installation command here
   goto :start
 )
 if /I "%errorlevel%" EQU "3" (
-  start option3
+  echo Installing XAMPP...
+  REM Add your XAMPP installation command here
   goto :start
 )
