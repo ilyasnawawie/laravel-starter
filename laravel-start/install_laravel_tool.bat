@@ -34,8 +34,26 @@ echo         [90;1m╚═╦═════»[0m  [92m[Manage XAMPP][0m   [
 echo|set /p=".          [90;1m╚══>[0m"
 choice /c 123 >nul
 if /I "%errorlevel%" EQU "1" (
-  echo Installing npm...
-  REM Add your npm installation command here
+  cls
+  echo.
+  echo [92m[Select NPM Option][0m
+  echo.
+  echo     [90;1m╔═╦═════»[0m  [92m[Install NPM][0m  [95m[1][0m
+  echo       [90;1m╚═╦═════»[0m  [92m[Update NPM][0m   [95m[2][0m
+  echo         [90;1m╚═╦═════»[0m  [92m[Delete NPM][0m   [95m[3][0m
+  echo|set /p=".          [90;1m╚══>[0m"
+  choice /c 123 >nul
+  if /I "%errorlevel%" EQU "1" (
+    echo Installing NPM...
+    REM Add your NPM installation command here
+  ) else if /I "%errorlevel%" EQU "2" (
+    echo Updating NPM...
+    REM Add your NPM update command here
+  ) else if /I "%errorlevel%" EQU "3" (
+    echo Deleting NPM...
+    REM Add your NPM delete command here
+  )
+  pause
   goto :start
 )
 if /I "%errorlevel%" EQU "2" (
